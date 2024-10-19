@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "main.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "main.py"
+    }
+  ],
+  "includeFiles": [
+    "website/**",
+    "roms/**"
+  ],
+  "functions": {
+    "main.py": {
+      "memory": 900,
+      "maxDuration": 10
+    }
+  }
+}
